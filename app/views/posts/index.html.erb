@@ -6,14 +6,17 @@
 
 <div class="main">
 <div class="container">
-  
-  
 
-  
-  <ul class="comments">
-    <li>Have you felt it?</li>
-    <li>There has been an awakening.</li>
-  </ul>
+<%= form_for(@new_post) do |f| %>
+<%= f.text_field :comment, :placeholder => "Share your thoughts" %>    
+<%= f.submit "Post", :class => "btn" %>   
+<% end %>
+<ul class="comments">
+<% @all_posts.each do |p| %>
+<li><%= p.comment %></li>
+<% end %> 
+</ul>
+
 
 </div>
 </div>
